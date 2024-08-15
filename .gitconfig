@@ -1,0 +1,10 @@
+[user]
+	name = Michael Teuscher
+	email = 70554955+mfteuscher@users.noreply.github.com
+	signingkey = /Users/michaelteuscher/.ssh/id_github.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
