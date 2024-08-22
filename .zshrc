@@ -13,3 +13,10 @@ alias trail='<<<${(F)path}'
 function mkcd() {
   mkdir -p "$@" && cd "$_"
 }
+
+# Syntax highlighting
+# man pages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export BAT_THEME="Visual Studio Dark+"
+
+export NULLCMD=bat
