@@ -20,3 +20,11 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export BAT_THEME="Visual Studio Dark+"
 
 export NULLCMD=bat
+
+# Package plugins
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
