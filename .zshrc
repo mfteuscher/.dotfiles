@@ -39,3 +39,8 @@ then
   autoload -Uz compinit
   compinit
 fi
+
+# Starship Prompt
+if [[ $TERM_PROGRAM != 'Apple_Terminal' ]]; then
+  eval "$(starship init zsh)"
+fi
