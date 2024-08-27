@@ -64,3 +64,6 @@ fi
 if [[ $TERM_PROGRAM != 'Apple_Terminal' ]]; then
   eval "$(starship init zsh)"
 fi
+
+
+eval "$(fnm env --use-on-cd --shell zsh)"
