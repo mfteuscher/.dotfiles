@@ -18,6 +18,8 @@ brew "mas"
 brew "nano"
 # Improved Nano Syntax Highlighting Files
 brew "nanorc"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
