@@ -16,6 +16,8 @@ brew "mas"
 brew "nano"
 # Improved Nano Syntax Highlighting Files
 brew "nanorc"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Shell extension to navigate your filesystem faster

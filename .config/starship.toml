@@ -1,0 +1,86 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+format = """
+[](#C1C1C1)\
+$os\
+[](bg:#008939 fg:#C1C1C1)\
+$directory\
+[](fg:#008939 bg:#005089)\
+$git_branch\
+[](fg:#005089)\
+$fill\
+$aws\
+$bun\
+$c\
+$cmake\
+$java\
+$localip\
+$nodejs\
+$package\
+$python\
+$rlang\
+$rust\
+$line_break\
+$character
+"""
+
+[aws]
+format = '[$symbol($profile)]($style)'
+symbol = ' '
+force_display = true
+[aws.region_aliases]
+us-west-2 = 'west-2'
+
+[directory]
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+style = "bg:#008939"
+
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+style = "bg:#005089"
+
+[fill]
+symbol = ' '
+
+[bun]
+format = 'via [Bun $version](bold green) '
+
+
+[c]
+format = '[$symbol $version]($style)'
+symbol = " "
+
+[cmake]
+
+[java]
+symbol = " "
+
+[localip]
+disabled = false
+ssh_only = false
+
+[nodejs]
+format = '[$symbol$version]($style)'
+
+[os]
+disabled = false
+style = "bg:#C1C1C1 fg:#000000"
+[os.symbols]
+Macos = " "
+
+[package]
+format = '[$version]($style)'
+display_private = true
+
+[python]
+format = '[$symbol$version]($style)'
+symbol = " "
+
+[rlang]
+format = '[$symbol$version]($style)'
+symbol = "󰟔 "
+
+[rust]
+format = '[$symbol$version]($style)'
+symbol = "󱘗 "
