@@ -25,6 +25,12 @@ cask "arc"
 cask "font-jetbrains-mono-nerd-font"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Application to control your PlayStation 4 or PlayStation 5
+cask "sony-ps-remote-play"
+# Virtual machines UI using QEMU
+cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Create, manage, and run virtual machines
