@@ -4,6 +4,8 @@ tap "homebrew/bundle"
 brew "bat"
 # Modern, maintained replacement for ls
 brew "eza"
+# Fast and simple Node.js version manager
+brew "fnm"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
