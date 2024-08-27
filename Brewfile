@@ -25,6 +25,8 @@ brew "zoxide"
 # Chromium based browser
 cask "arc"
 cask "font-jetbrains-mono-nerd-font"
+# Terminal built on web technologies
+cask "hyper"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Control your tools with a few keystrokes
