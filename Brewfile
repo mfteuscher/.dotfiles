@@ -1,5 +1,7 @@
 tap "homebrew/aliases"
 tap "homebrew/bundle"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Modern, maintained replacement for ls

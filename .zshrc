@@ -14,6 +14,26 @@ function mkcd() {
   mkdir -p "$@" && cd "$_"
 }
 
+function aws-profile() {
+    if [ "$1" = "set" ] && [ -n "$2" ]; then
+        export AWS_PROFILE="$2"
+        echo "AWS profile set to '$AWS_PROFILE'"
+    elif [ "$1" = "get" ]; then
+        echo "$AWS_PROFILE"
+    elif [ "$1" = "unset" ]; then
+        unset AWS_PROFILE
+        echo "AWS profile unset"
+    else
+        echo """
+        Usage:
+        aws-profile set <profile>
+        aws-profile get
+        aws-profile unset
+        """
+    fi
+}
+
+
 # Syntax highlighting
 # man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
