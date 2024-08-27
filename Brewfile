@@ -55,3 +55,6 @@ mas "MainStage", id: 634159523
 mas "Motion", id: 434290957
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+vscode "eyebonk.subtle-blue"
+vscode "eyebonk.subtle-green"
+vscode "johnpapa.winteriscoming"
