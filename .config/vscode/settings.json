@@ -2,5 +2,7 @@
     "editor.tabSize": 4,
     "workbench.colorTheme": "Winter is Coming (Dark Blue)",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-    "git.enableCommitSigning": true
+    "git.enableCommitSigning": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'JetbrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace"
 }
