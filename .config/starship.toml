@@ -2,12 +2,15 @@
 
 
 format = """
-[](#C1C1C1)\
+[](#C0C0C0)\
 $os\
-[](bg:#008939 fg:#C1C1C1)\
+[](bg:#008939 fg:#C0C0C0)\
 $directory\
 [](fg:#008939 bg:#005089)\
 $git_branch\
+$git_status\
+$git_state\
+$git_commit\
 [](fg:#005089)\
 $fill\
 $aws\
@@ -17,23 +20,33 @@ $cmake\
 $java\
 $localip\
 $nodejs\
-$package\
 $python\
 $rlang\
 $rust\
+$package\
 $line_break\
 $character
 """
 
+[git_commit]
+format = '[ \($hash\) $tag ]($style)'
+style = "bg:#005089 fg:green"
+tag_disabled = false
+
+[git_status]
+format = '([\[$all_status$ahead_behind\] ]($style))'
+style = "bg:#005089 fg:yellow"
+
 [aws]
-format = '[$symbol($profile)]($style)'
+format = '[ $symbol($profile) ]($style)'
 symbol = ' '
 force_display = true
 [aws.region_aliases]
 us-west-2 = 'west-2'
 
 [directory]
-format = "[ $path ]($style)[$read_only]($read_only_style)"
+format = "[ $path $read_only ]($style)"
+read_only = ""
 style = "bg:#008939"
 
 [git_branch]
@@ -58,10 +71,10 @@ symbol = " "
 
 [localip]
 disabled = false
-ssh_only = false
+style = "cyan"
 
 [nodejs]
-format = '[$symbol$version]($style)'
+format = '[ $symbol$version ]($style)'
 
 [os]
 disabled = false
@@ -74,13 +87,13 @@ format = '[$version]($style)'
 display_private = true
 
 [python]
-format = '[$symbol$version]($style)'
+format = '[ $symbol$version ]($style)'
 symbol = " "
 
 [rlang]
-format = '[$symbol$version]($style)'
+format = '[ $symbol$version ]($style)'
 symbol = "󰟔 "
 
 [rust]
-format = '[$symbol$version]($style)'
+format = '[ $symbol$version ]($style)'
 symbol = "󱘗 "
