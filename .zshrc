@@ -1,17 +1,36 @@
 # .zshrc
 # Author: Michael Teuscher
 
-# PATH Variables
+# Variables
 export DOTFILES_DIR="$HOME/.dotfiles"
 export HOMEBREW_BUNDLE_FILE="$DOTFILES_DIR/Brewfile"
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Add SSH key to keychain
+ssh-add --apple-use-keychain ~/.ssh/id_github > /dev/null 2>&1
+
+# PATH Variables
+typeset -U path # this line makes the path array unique
+path=(
+    "/opt/homebrew/opt/openjdk/bin"
+    "/opt/homebrew/opt/rustup/bin"
+    "/Users/michaelteuscher/.cargo/bin"
+    $path
+)
 
 # Aliases
 alias ls='eza -lahF --git --icons $@'
 alias trail='<<<${(F)path}'
+alias info='fastfetch'
+alias c='clear'
 
 # Functions
 function mkcd() {
   mkdir -p "$@" && cd "$_"
+}
+
+function frequency() {
+    history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
 }
 
 function aws-profile() {
@@ -54,7 +73,13 @@ eval "$(zoxide init --cmd cd zsh)"
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  typeset -U fpath # this line makes the path array unique
+  # FPATH="$(brew --prefix)/share/zsh/site-functions:$(brew --prefix)/share/zsh-completions:${FPATH}"
+  fpath=(
+    $(brew --prefix)/share/zsh/site-functions
+    $(brew --prefix)/share/zsh-completions
+    $fpath
+  )
 
   autoload -Uz compinit
   compinit
@@ -67,3 +92,6 @@ fi
 
 
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
