@@ -8,3 +8,11 @@
 	gpgsign = true
 [init]
 	defaultBranch = main
+[gpg "ssh"]
+	allowedSignersFile = /Users/michaelteuscher/.ssh/allowed_signers
+[alias]
+    new = checkout -b
+    publish = "!f() { BRANCH=${1:-$(git rev-parse --abbrev-ref HEAD)}; git push -u origin $BRANCH; }; f"
+    ff = merge --ff-only
+[core]
+	editor = nvim
